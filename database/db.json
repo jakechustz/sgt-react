@@ -1,0 +1,22 @@
+{
+  "grades": [
+    {
+      "id": 5,
+      "name": "Jaida Essence Hall",
+      "course": "JavaScript",
+      "grade": 100
+    },
+    {
+      "id": 12,
+      "name": "Gigi Goode",
+      "course": "JavaScript",
+      "grade": 100
+    },
+    {
+      "id": 32,
+      "name": "Crystal Methyd",
+      "course": "JavaScript",
+      "grade": 100
+    }
+  ]
+}
