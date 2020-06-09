@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './header';
 import GradeTable from './grade-table';
 
-class App extends React.Component {
+export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -24,15 +24,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <div className="row">
-          <div className="col pt-6">
-            <Header />
-            <GradeTable grades={this.state.grades} />
-          </div>
-        </div>
+        <Header />
+        <GradeTable grades={this.state.grades} />
       </div> // end of container div
     );
   }
 } // end of class App
-
-export default App;
