@@ -35,7 +35,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <Header average={this.props.average}/>
+        <Header average={this.getAverageGrade()}/>
         <GradeTable grades={this.state.grades} />
       </div> // end of container div
     );
