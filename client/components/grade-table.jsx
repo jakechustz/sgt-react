@@ -4,6 +4,7 @@ import Grade from './grade';
 
 export default class GradeTable extends React.Component {
   render() {
+
     return (
       <table className="table table-striped">
         <thead>

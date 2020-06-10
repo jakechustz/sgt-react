@@ -6,3 +6,7 @@ h1 {
 h3 {
   margin-right: 1rem;
 }
+
+#cancel-button {
+  color: white;
+}

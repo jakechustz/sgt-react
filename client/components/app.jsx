@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './header';
 import GradeTable from './grade-table';
+import GradeForm from './grade-form';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -9,6 +10,7 @@ export default class App extends React.Component {
       grades: []
     }; // end of constructor
     this.getAverageGrade = this.getAverageGrade.bind(this);
+    this.addNewGrade = this.addNewGrade.bind(this);
   } // end of object literal
 
   componentDidMount() {
@@ -32,11 +34,36 @@ export default class App extends React.Component {
     } // end of if statement
   } // end of getAverageGrade
 
+  addNewGrade(newGrade) {
+    fetch('/api/grades', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newGrade)
+    })
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          grades: this.state.grades.concat(data)
+        }); // end of setState
+      })// end of 2nd .then
+      .catch(error => console.error(error));
+  }// end of addNewGrade
+
   render() {
     return (
       <div className="container">
-        <Header average={this.getAverageGrade()}/>
-        <GradeTable grades={this.state.grades} />
+        <Header average={this.getAverageGrade()} />
+        <div className="row mt-4">
+          <div className="col-md-8">
+            <GradeTable grades={this.state.grades} />
+          </div>
+          <div className="col-md-4">
+            <h2 className="mb-4">Add Grade</h2>
+            <GradeForm onSubmit={this.addNewGrade}/>
+          </div>
+        </div>
       </div> // end of container div
     );
   }
