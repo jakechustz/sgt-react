@@ -20,6 +20,7 @@ export default class GradeForm extends React.Component {
   }
 
   handleSubmit(event) {
+    event.preventDefault();
     this.props.addNewGrade(
       {
         name: this.state.name,
@@ -27,7 +28,6 @@ export default class GradeForm extends React.Component {
         grade: Number(this.state.grade)
       } // end of object
     ); // end of addNewGrade argument list
-    event.preventDefault();
     this.handleReset();
   } // end of handleSubmit code block
 

@@ -61,7 +61,7 @@ export default class App extends React.Component {
           </div>
           <div className="col-md-4">
             <h2 className="mb-4">Add Grade</h2>
-            <GradeForm onSubmit={this.addNewGrade}/>
+            <GradeForm addNewGrade={this.addNewGrade}/>
           </div>
         </div>
       </div> // end of container div
