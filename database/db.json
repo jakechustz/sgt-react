@@ -17,12 +17,6 @@
       "name": "Crystal Methyd",
       "course": "JavaScript",
       "grade": 100
-    },
-    {
-      "name": "Test",
-      "course": "test",
-      "grade": 99,
-      "id": 33
     }
   ]
 }
